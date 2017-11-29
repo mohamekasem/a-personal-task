@@ -1,0 +1,23 @@
+{
+  "name": "a-personal-task",
+  "version": "1.0.0",
+  "description": "Challenge your personal project with friends In one week",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamekasem/a-personal-task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohamekasem/a-personal-task/issues"
+  },
+  "homepage": "https://github.com/mohamekasem/a-personal-task#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.5"
+  }
+}
