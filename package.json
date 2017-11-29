@@ -4,7 +4,7 @@
   "description": "Challenge your personal project with friends In one week",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,16 @@
   },
   "homepage": "https://github.com/mohamekasem/a-personal-task#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongoose": "^4.13.5"
+    "helmet": "^3.9.0",
+    "mongoose": "^4.13.5",
+    "nodemon": "^1.12.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.0"
+  },
+  "engines": {
+    "node": "6.2.0"
   }
 }
