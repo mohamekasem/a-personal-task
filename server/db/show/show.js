@@ -8,8 +8,8 @@ let show = new Schema({
     // episodesNum: {type: Num},
     aired: String,
     type: String,          
-    Studios: String,
-    Genres: String,
+    studios: String,
+    genres: String,
     episodes: [{type: ObjectId, ref: "Episode"}]
 });
 

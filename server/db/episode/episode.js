@@ -1,11 +1,13 @@
 const mongoose = require('mongoose'),
-      Shcema = mongoose.Shcema;
+      Schema = mongoose.Schema;
 
-let episode = new Shcema ({
+let episode = new Schema ({
     title: {type: String, require: true},
     views: {type: Number, default: "0"},
-    // ma be i will make a servers schema ***
-    servers: {type:Object}//[{},{}] 
+    servers: {
+        nameOfServer: String,
+        url: String
+      } 
 });
 
 
