@@ -2,10 +2,21 @@ let showCtrl = require('../db/show/showController');
 let episodeCtrl = require('../db/episode/episodeController');
 
 module.exports = function(app, express) {
-    app.get('/list_anime', showCtrl.getAllShows);
-    app.get('/list_anime/:id', showCtrl.getOneAnime);
-    // note this part in not complite need more work
-    add.get('/anime_online/:title')
-    app.post('/add/anime_show', showCtrl.postNewShow);
+                    /*\\\\\\\\\\\get all anime////////////*/
 
+    app.get('/list_anime', showCtrl.getAllShows);
+                    //********add new anime ***********\\
+    app.post('/add/anime_show', showCtrl.postNewShow);
+                    //********get anime info***********\\
+    app.get('/list_anime/:id', showCtrl.getOneAnime);
+                    //********get anime and his episodes******\\
+    app.get('/:id', showCtrl.getEpisodes);
+                    //********add episode to anime ***********\\
+    app.put('/anime_name', showCtrl.updateEpisodes);
+
+                //***********\episode routes/ *********************\\
+                /*          general episode add       */
+    app.post('/add/new_episode', episodeCtrl.addEpisode);
+                /*          get all episodes          */
+    app.get('/view/all_episode', episodeCtrl.getAllEpisodes);
 };

@@ -2,14 +2,6 @@ let Show = require('./show');
 let Episode = require('../episode/episode');
 
 module.exports = {
-    getAllShows : function(req, res){
-        console.log(req)
-        res.send('weeeeeeeeeeee')
-    }
-}
-
-module.exports = {
-
     getAllShows: function (req, res) {  
         Show.find({}, function(err, list){
             if(err){
@@ -44,37 +36,35 @@ module.exports = {
             }else{
                 res.status(200).send(anime);
             }
-        })
+        });
+    },
+    
+// note : add search bu id to get the same episode for one anime
+
+    getEpisodes: function(req,res) {
+        Show.findById(req.params.id).populate({path: 'episodes', model: 'Episode'}).exec(function(err,episodes){
+            if(err){
+                res.status(500).send(err);
+            }else {
+                 res.send(episodes);  
+            }
+         });   
     },
 
-    addEpisode: function(req, res){
-        
+    updateEpisodes : function(req, res){
+        // console.log(req.body)
+        Episode.findOne({_id: req.body.episode_id}, function(err, episode){
+            if(err){
+                res.status(500).send(err);
+            }else {
+           Show.update({_id: req.body.anime_id}, {$addToSet:{episodes: episode._id}}, function(err, state) {
+                    if(err){
+                        res.status(500).send(err);
+                    }else {
+                        res.send(state);
+                    }
+                })
+            }
+        });
     }
-  //  ,
-
-    // getEpisode: function(req,res) {
-    //     Show.find({}).populate({path: 'episode', model: 'Episode'}).exec(function(err,episodes){
-    //         if(err){
-    //             res.status(500).send(err);
-    //         }else {
-    //              res.send(episode);  
-    //         }
-    //      })    
-    // },
-
-    // updateEpisodes : function(req, res){
-    //     Episode.findOne({_id: req.body.productId}, function(err, product){
-    //         if(err){
-    //             res.status(500).send(err);
-    //         }else {
-    //        Show.update({_id: req.body.wishListId}, {$addToSet:{products: product._id}}, function(err, wishList) {
-    //                 if(err){
-    //                     res.status(500).send(err);
-    //                 }else {
-    //                     res.send(wishList);
-    //                 }
-    //             })
-    //         }
-    //     })
-    // }
 }
