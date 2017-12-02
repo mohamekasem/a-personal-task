@@ -39,8 +39,6 @@ module.exports = {
         });
     },
     
-// note : add search bu id to get the same episode for one anime
-
     getEpisodes: function(req,res) {
         Show.findById(req.params.id).populate({path: 'episodes', model: 'Episode'}).exec(function(err,episodes){
             if(err){
@@ -66,5 +64,15 @@ module.exports = {
                 })
             }
         });
+    },
+
+    getOneEps: function(req, res){
+        // Episode.findOne(_id: req.body._id, function(err, episode){
+        //     if(err){
+
+        //     }
+        // });
+        // Show.fin
     }
+
 }

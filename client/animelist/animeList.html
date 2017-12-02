@@ -1,1 +1,5 @@
-<h1>hi</h1>
+<div ng-init='getAnimeList()'>
+    <ul  ng-repeat='elemnt in list'>
+        <li><a href="#/zengo">{{elemnt.title}}</a></li>
+    </ul>
+</div>

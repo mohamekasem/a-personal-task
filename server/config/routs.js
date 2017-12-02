@@ -10,7 +10,8 @@ module.exports = function(app, express) {
                     //********get anime info***********\\
     app.get('/list_anime/:id', showCtrl.getOneAnime);
                     //********get anime and his episodes******\\
-    app.get('/:id', showCtrl.getEpisodes);
+    app.get('/info/:id', showCtrl.getEpisodes);
+    app.get('/get_episod/:id', showCtrl.getOneEps);
                     //********add episode to anime ***********\\
     app.put('/anime_name', showCtrl.updateEpisodes);
 

@@ -4,6 +4,7 @@ angular.module('ShadowAnime', [
 	'ShadowAnime.support',
 	'ShadowAnime.privacy',
 	'ShadowAnime.dmca',
+	'ShadowAnime.episode',
 	'ShadowAnime.services',
 	'ngRoute'
 	])
@@ -17,6 +18,10 @@ angular.module('ShadowAnime', [
 	.when('/animelist', {
 		templateUrl: 'animeList/animeList.html',
 		controller: 'anListCtrl'
+	})
+	.when('/zengo', {
+		templateUrl: 'episode/episode.html',
+		controller: 'episodeCtrl'
 	})
 	.when('/movie', {
 		templateUrl: 'movie/movie.html',
@@ -37,6 +42,4 @@ angular.module('ShadowAnime', [
 
 	.otherwise({redirectTo: "/"});
 
-	$locationProvider.hashPrefix('');
-	$httpProvider.interceptors.push('AttachTokens');
 })

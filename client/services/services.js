@@ -5,11 +5,20 @@ angular.module('ShadowAnime.services', [])
 	function getAnimeList () {
 	  return $http({
 		method: 'GET',
-		url: '/api/list_anime'
+		url: '/list_anime'
 		})
-		.then(function (resb) {
-		  return resb.data;
+		.then(function (res) {
+			console.log(res.data[0].title);
+		  return res.data;
 		});
+	}
+
+	function getAnimeEpisodes(id){
+		return $http({
+			method: 'GET',
+			url: '/info/',
+			paramse: id
+		})
 	}
 
 	return {getAnimeList: getAnimeList};
