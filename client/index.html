@@ -1,60 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ShadowAnime</title>
     <!-- <script src="bower_components/angular/angular.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="assets/js/jquery-3.2.1.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body ng-app ="ShadowAnime">
-   <!-- nav bar -->
-   <div class="navbar ">
-    <div class="container-fluid">
-        <nav class="nav navbar-inverse bg-inverse">
-            <div class="container">
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                       <img src="assets/imgs/logo.png" class="img-responsive1"/>
-                   </ul> 
-                   <ul class="nav navbar-nav">
-                    <li class="active"><a href="#/home" class="">Home</a></li>
-                    <li><a href="#/animelist">Anime list</a></li>
-                    <li><a href="#/movie">movie</a></li>
-                    <li><a href="#/support">support</a></li>  
-                </ul>
-                <ul class="nav navbar-nav pull-right">
-                    <li class="">
-                      <a href="#/privacy">
-                        PRIVACY
-                      </a>
-                     </li>
-                    <li class="">
-                      <a href="#/dmca">
-                        DMCA
-                      </a>
-                    </li>
-                    </ul>
-                </div>
+    <!-- <img src="assets/imgs/logo2.png" width="1000" height="400"/> -->
+   <!-- nav bar -->    
+
+    <nav class="navbar navbar-toggleable-md nav-menu">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand nav_brand" href="#/"><img src="/assets/imgs/logo2.png" class="d-inline-block align-top" alt="">
+              </a></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#/animelist">Anime list</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/movie">Movie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/support">Support</a>
+                </li>
+              </ul>
+            
+              <ul class='navbar-nav navbar-right'>
+                  <li class='nav-item'>
+                    <a class='nav-link' href="#/privacy">Privacy</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#/dmca">DMCA</a>
+                  </li>
+              </ul>
             </div>
-        </nav>
-    </div>
-<!-- </div> -->
-<nav class="navbar navbar-dark bg-dark">
-    <!-- Navbar content -->
-  </nav>
-
-
-
+          </nav>
+<div class='container-fluid'>
 <!--  rendering the app  -->
 <ng-view></ng-view>
 
 
 
 
+</div>
+<footer class="footer bg-inverse">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-lg-3">
+          <img class="img-fluid footerImg" src="assets/imgs/logo2.png">
+        </div>
+        <div class="col-sm-12 col-lg-4 socialWrapper">
+          <a href="https://facebook.com" target="_blank">
+           <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+          </a>
+          <!-- <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i> -->
+          <a href="https://twitter.com" target="_blank">
+           <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank">
+           <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="col-sm-12 col-lg-5 footer_info__custom-style">
+         <h2>About US</h2>
+           <p>Shadow Anime-Watch anime online for free.
+            Here you can watch any anime you want, if it isn't available in the site,
+           just send us a request, we will upload it for you as soon as possible.
+           </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+            <p class="footer_info__custom-style">
+               Design and programming <a href="" style="color:black;" target="_blank">
+                 Mohammed Kasem
+                </a> 
+            </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 <!-- assets -->
 <script src="assets/js/tether.min.js"></script>
@@ -68,6 +110,7 @@
 <script src="dmca/dmca.js"></script>
 <script src="home/home.js"></script>
 <script src="episode/episode.js"></script>
+<script src="anime-show/anime-show.js"></script>
 <script src="services/services.js"></script>
 
 

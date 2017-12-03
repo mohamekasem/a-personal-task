@@ -3,14 +3,14 @@ let mongoose = require('mongoose'),
       ObjectId = mongoose.Schema.Types.ObjectId;
 
 let show = new Schema({
-    title: {type: String, require: true, default: "new show"},
-    img: {type: String, require:true, default: "some url"},
+    title: {type: String, require: true, default: "new show", unique: true},
+    img: {type: String, default: "/assets/imgs/1.jpg"},
+    imgCap : {type: String, default: "/assets/imgs/1.jpg"},
     // episodesNum: {type: Num},
     aired: String,
     type: String,          
     studios: String,
-    genres: String,
-    episodes: [{type: ObjectId, ref: "Episode"}]
+    genres: String
 });
 
 module.exports = mongoose.model('Show', show);

@@ -7,7 +7,7 @@ require('./config/routs.js')(app, express);
 
 
 // db config
-let mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/leco';
+let mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/shadow-test';
 let db = mongoose.connect(mongoURI, { useMongoClient: true });
 db = mongoose.connection
 

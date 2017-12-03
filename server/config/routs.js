@@ -7,6 +7,8 @@ module.exports = function(app, express) {
     app.get('/list_anime', showCtrl.getAllShows);
                     //********add new anime ***********\\
     app.post('/add/anime_show', showCtrl.postNewShow);
+                        //********delete anime ***********\\
+    app.delete('/delete/anime/x', showCtrl.deleteAnime);
                     //********get anime info***********\\
     app.get('/list_anime/:id', showCtrl.getOneAnime);
                     //********get anime and his episodes******\\

@@ -1,5 +1,22 @@
-<div ng-init='getAnimeList()'>
-    <ul  ng-repeat='elemnt in list'>
-        <li><a href="#/zengo">{{elemnt.title}}</a></li>
-    </ul>
+<div class="container anime-container" ng-init='A.getAnimeList()'>
+    <div class="row">
+        <div class=" col-sm-12 cart__list_title">
+            <h3>All Anime</h3>
+            <nav class="navbar">
+                    <form class="form-inline my-2 my-lg-0">
+                       <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                       <button class="btn btn-custom" type="submit">Search</button>
+                   </form>
+               </nav>
+        </div>
+        
+        <div class="card card__list_element" ng-repeat='element in list'>
+          <div ng-click ="A.getAnimeInfo(element._id)">
+           <a href="#/animelist/anime_info/{{element.title}}">
+           <img class="card-img-top" src={{element.imgCap}} alt="Card image cap">
+           <p class="">{{element.title}}</p>
+           </a>
+         </div>
+        </div>
+    </div>
 </div>

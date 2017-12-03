@@ -8,18 +8,30 @@ angular.module('ShadowAnime.services', [])
 		url: '/list_anime'
 		})
 		.then(function (res) {
-			console.log(res.data[0].title);
 		  return res.data;
 		});
 	}
 
-	function getAnimeEpisodes(id){
+	// function getAnimeEpisodes(id){
+	// 	return $http({
+	// 		method: 'GET',
+	// 		url: '/info/',
+	// 		paramse: id
+	// 	})
+	// }
+	
+	function getAnimeInfo(id){
 		return $http({
 			method: 'GET',
-			url: '/info/',
-			paramse: id
+			url: '/list_anime/' + id
+		})
+		.then(function(res){
+			return res.data;
 		})
 	}
 
-	return {getAnimeList: getAnimeList};
+	return {
+		getAnimeList: getAnimeList,
+		getAnimeInfo: getAnimeInfo
+	};
 });

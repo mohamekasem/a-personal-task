@@ -1,10 +1,12 @@
 angular.module('ShadowAnime', [
+	'ShadowAnime.home',
 	'ShadowAnime.animeList',
 	'ShadowAnime.movie',
 	'ShadowAnime.support',
 	'ShadowAnime.privacy',
 	'ShadowAnime.dmca',
 	'ShadowAnime.episode',
+	'ShadowAnime.anime-show',
 	'ShadowAnime.services',
 	'ngRoute'
 	])
@@ -17,7 +19,12 @@ angular.module('ShadowAnime', [
 	  })
 	.when('/animelist', {
 		templateUrl: 'animeList/animeList.html',
-		controller: 'anListCtrl'
+		controller: 'anListCtrl',
+		controllerAs: 'A'
+	})
+	.when('/animelist/anime_info/:id', {
+		templateUrl: 'anime-show/anime-show.html',
+		controller: 'animeShowCtrl'
 	})
 	.when('/zengo', {
 		templateUrl: 'episode/episode.html',
@@ -41,5 +48,5 @@ angular.module('ShadowAnime', [
 	})
 
 	.otherwise({redirectTo: "/"});
-
+	
 })

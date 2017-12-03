@@ -16,6 +16,7 @@ module.exports = {
       let newShow = new Show ({
         title: req.body.title,
         img: req.body.url,
+        imgCap:req.body.imgCap,
         aired: req.body.aired,
         type: req.body.type,          
         studios: req.body.studios,
@@ -73,6 +74,16 @@ module.exports = {
         //     }
         // });
         // Show.fin
+    },
+
+    deleteAnime: function(req, res){
+        Show.remove({_id: req.body._id}, function(err, state){
+            if(err){
+                res.status(500).send(err);
+            }else {
+                res.send(state);
+            }
+        })
     }
 
 }

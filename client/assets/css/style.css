@@ -1,0 +1,128 @@
+body {
+    margin: 0px;
+    background-image: url('/assets/imgs/bg.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+nav.nav-menu {
+    background-color:black;
+    box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
+}
+
+.nav_brand img{
+    background-color: #ffffff;
+    border-radius: 10px;
+    width:40px;
+    height: auto;
+}
+
+nav ul > li > a{
+    color: #8A2BE2;
+    padding: 5px;
+}
+
+nav ul > li a:hover{
+    color: red;
+}
+
+div.anime-container {
+    background-color: rgba(138, 43, 226, 0.35);
+}
+
+/* buttons */
+.btn {
+    cursor: pointer;
+}
+
+.btn-custom:hover {
+    background-color: #02010a;
+    border-color: #8A2BE2;
+}
+
+.btn-custom {
+    color: #f2f1ff;
+    background-image: none;
+    background-color: transparent;
+    border-color: #02010a;
+}
+
+/* Cart Anime-List */
+.card__list_element {
+    
+    display: block;
+    margin: 0px 2px;
+    background-color:#8A2BE2;
+    margin: 10px;
+    border-radius: 10px;    
+    box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
+}
+
+.card__list_element .card-img-top {
+    margin-top: 10px; 
+    width: 220px;
+    height: 300px;
+    padding: 10px;
+}
+
+.cart__list_title {
+    display: block;
+    margin: auto;
+    background-color: transparent;
+    color: #000000;
+    text-align: center;
+    border-bottom: 10px solid black;
+    box-shadow: 0px 1px 7px rgba(0,0,0,0.54);
+    margin-bottom: 10px
+}
+
+
+/* footer */
+.footerImg {
+    padding: 15px;
+  }
+  
+  .fa {
+    margin: 10px;
+  }
+  
+  .fa-facebook-square {
+    color: #3b5998;
+  }
+  
+  .fa-linkedin-square {
+    color: #006097;
+  }
+  
+  .fa-instagram {
+    color: #ffffff;
+  }
+
+  .fa-twitter-square {
+      color: #1c94e0;
+  }
+  
+  .socialWrapper {
+    margin: auto;
+  }
+
+  .footer_info__custom-style {
+      display: block;
+      margin-top: 15px;
+      padding: 15px;
+      color: #ffffff;
+      text-align: center;
+  }

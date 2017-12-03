@@ -7,7 +7,8 @@ let episode = new Schema ({
     servers: {
         nameOfServer: String,
         url: String
-      } 
+      },
+    anime_id: String
 });
 
 
