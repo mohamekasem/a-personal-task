@@ -15,10 +15,7 @@ module.exports = {
             console.log(typeof anime_id, 'anime_id');
             let newEpisode = new Episode({
                 title: req.body.title,
-                servers: {
-                    nameOfServer: req.body.nameOfServer,
-                    url: req.body.url
-                },
+                servers: req.body.servers,
                 anime_id: anime_id      
             }).save(function(err, newEp){
                 if(err){

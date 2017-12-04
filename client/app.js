@@ -11,8 +11,9 @@ angular.module('ShadowAnime', [
 	'ngRoute'
 	])
 
-.config(function($routeProvider, $httpProvider, $locationProvider) {
+.config(function($routeProvider, $httpProvider, $locationProvider, $sceDelegateProvider) {
 	$routeProvider
+		
 	.when("/", {
 		templateUrl: 'home/home.html',
 		controller: 'homeCtrl'
@@ -22,11 +23,12 @@ angular.module('ShadowAnime', [
 		controller: 'anListCtrl',
 		controllerAs: 'A'
 	})
-	.when('/animelist/anime_info/:id', {
+	.when('/animelist/info/:id', {
 		templateUrl: 'anime-show/anime-show.html',
-		controller: 'animeShowCtrl'
+		controller: 'animeShowCtrl',
+		controllerAs: 'A-Show'
 	})
-	.when('/zengo', {
+	.when('/episodes/:id/episode', {
 		templateUrl: 'episode/episode.html',
 		controller: 'episodeCtrl'
 	})
@@ -49,4 +51,8 @@ angular.module('ShadowAnime', [
 
 	.otherwise({redirectTo: "/"});
 	
+	$sceDelegateProvider.resourceUrlWhitelist([
+		'self',
+		'*://www.youtube.com/**'
+	  ])
 })

@@ -10,7 +10,8 @@ let show = new Schema({
     aired: String,
     type: String,          
     studios: String,
-    genres: String
+    genres: String,
+    trUrl: String
 });
 
 module.exports = mongoose.model('Show', show);

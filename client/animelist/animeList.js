@@ -3,9 +3,10 @@ angular.module('ShadowAnime.animeList', [])
 .controller('anListCtrl', function($rootScope, $scope, services,$window) {
 	$scope.list = {};
 	var vm = this;
-	vm.getAnimeInfo = getAnimeInfo;
 	vm.getAnimeList = getAnimeList;
-	$rootScope.amineInfo = {};
+	vm.getAnimeInfo = getAnimeInfo;
+	$rootScope.animeInfo = {};
+	
     function getAnimeList () {
 		services.getAnimeList()
 		 .then(function (data) {
@@ -17,15 +18,18 @@ angular.module('ShadowAnime.animeList', [])
 	};
 
 	function getAnimeInfo (id){
-		console.log(id)
-		 services.getAnimeInfo(id)
-		  .then(function(info){
-			 $rootScope.amineInfo = info;
-			 console.log($rootScope.amineInfo)
-
-		  })
-		  .catch(function(error) {
-		 	console.error(error);
-		  });
-	}
+		$window.localStorage.setItem('id',id);		
+		services.sharedService.getAnimeInfo(id)
+		 .then(function(info){
+			$rootScope.animeInfo = info;
+		})
+		 .catch(function(error) {
+			console.error(error);
+		 });
+	   }
+	
+	   vm.getAnimeList();
+	   $window.localStorage.removeItem('id');
 });
+
+

@@ -10,7 +10,7 @@ module.exports = function(app, express) {
                         //********delete anime ***********\\
     app.delete('/delete/anime/x', showCtrl.deleteAnime);
                     //********get anime info***********\\
-    app.get('/list_anime/:id', showCtrl.getOneAnime);
+    app.get('/anime/info/:id', showCtrl.getOneAnime);
                     //********get anime and his episodes******\\
     app.get('/info/:id', showCtrl.getEpisodes);
     app.get('/get_episod/:id', showCtrl.getOneEps);

@@ -20,7 +20,8 @@ module.exports = {
         aired: req.body.aired,
         type: req.body.type,          
         studios: req.body.studios,
-        genres: req.body.genres
+        genres: req.body.genres,
+        trUrl: req.body.trUrl
       }).save(function(err, state){
           if (err){
               res.status(500).send(state);
