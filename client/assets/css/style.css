@@ -32,6 +32,13 @@ body {
     max-width: 100%;
 }
 
+.row {
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 a {
     text-decoration: none;
     color: #ffffff;
@@ -46,6 +53,7 @@ a:hover {
 nav.nav-menu {
     background-color:black;
     box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
+    -moz-box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
 }
 
 .nav_brand {
@@ -55,7 +63,7 @@ nav.nav-menu {
 .nav_brand img{
     background-color: #ffffff;
     border-radius: 10px;
-    width:40px;
+    /* width:40px; */
     height: auto;
 }
 
@@ -137,6 +145,8 @@ input.form-control:focus {
     margin: 10px;
     border-radius: 10px;    
     box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
+    -moz-box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
+    
 }
 
 .card__list_element .card-img-top {
@@ -155,6 +165,7 @@ input.form-control:focus {
     background-color: rgba(0,0,0,0.54);
     border-bottom: 10px solid black;
     box-shadow: 0px 1px 7px rgba(0,0,0,0.54);
+    -moz-box-shadow: 0px 1px 7px rgba(0,0,0,0.54);
     margin-bottom: 10px
 }
 
@@ -205,7 +216,8 @@ input.form-control:focus {
     padding: 12px;
     position: absolute;
     background-color: rgba(56, 0, 53, 0.4);
-    box-shadow: rgba(0,0,0,0.64);
+    box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
+    -moz-box-shadow: 0px 1px 7px rgba(0,0,0,0.64);    
     border-radius: 10px;
     width: 200px; 
     
@@ -215,7 +227,7 @@ input.form-control:focus {
     display: block;
     margin: auto;
     padding: 10px;
-    background-color:   rgba(0,0,0,0.64);
+    background-color: rgba(0,0,0,0.64);
 }
 
 .episodes_to-Show a{
@@ -276,7 +288,9 @@ input.form-control:focus {
     padding: 10px;
     /* width: ; */
     box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
+    -moz-box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
 }
+
 .info_iframe h1 {
     display: block;
     margin: auto;
@@ -300,7 +314,31 @@ input.form-control:focus {
 
 /* episodes page */
 
+.episodes_container {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.2);
+    color: #ffffff;
+    width: 75%;
+    display: block;
+}
 
+.episode_title {
+    padding: 10px;
+    margin: 0 5px;
+    border-bottom: 5px solid rgba(0,0,0,0.54);
+}
+
+.episodes_player-tabs {
+    /* background-color: rgba(0,0,0,0.64); */
+    padding: 10px;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.episodes_servers-taps li{
+    background-color: #000000;
+}
 
 /* footer */
 .footerImg {
@@ -340,7 +378,7 @@ input.form-control:focus {
   }
 
   .footer_info__custom-style {
-      display: block;
+      /* display: block; */
       margin-top: 15px;
       padding: 15px;
       color: #ffffff;
