@@ -1,5 +1,33 @@
-<h1 ng-init="getAnimeEpisodes(id)">episode</h1>
-
-<div ng-repeat="episode in episodes">
-    <h6>{{episode}}</h6>
+<div class="contaier episodes_container" ng-init="Ep.getAnimeEpisodes()">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="episode_title">
+                <h1>{{episode.anime_name}} &#8680; {{episode.ep}}</h1>
+            </div>
+            <div class="col-md-9 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="anime-player-tabs col-md-12">
+                        <ul class="nav nav-tabs col-md-12">
+                            <li ng-repeat="server in episode.servers" class="col-md-2 col-sm-3 col-xs-6">
+                                <a class="nav-link active" ng-click="Ep.catchUrl(server.url)">{{server.serverName}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                        <div class="anime-player">  
+                            <iframe width="560" height="315" ng-src={{trustSrc(url)}} frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                        <button ng-click="Ep.getAnimeEpisodes()" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Choose Episode 
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" ng-repeat="episode in episodes" ng-click="Ep.catchNewEps(episode)">{{episode.ep}}</a>
+                        </div>
+                      </div>
+            </div>
+        </div>
+    </div>
 </div>

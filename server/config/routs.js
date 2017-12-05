@@ -3,7 +3,7 @@ let episodeCtrl = require('../db/episode/episodeController');
 
 module.exports = function(app, express) {
                     /*\\\\\\\\\\\get all anime////////////*/
-
+    // note*/ remove an use route and add clear names;
     app.get('/list_anime', showCtrl.getAllShows);
                     //********add new anime ***********\\
     app.post('/add/anime_show', showCtrl.postNewShow);
@@ -18,8 +18,20 @@ module.exports = function(app, express) {
     app.put('/anime_name', showCtrl.updateEpisodes);
 
                 //***********\episode routes/ *********************\\
+                // note*/ add episodes to all routes;
                 /*          general episode add       */
     app.post('/add/new_episode', episodeCtrl.addEpisode);
                 /*          get all episodes          */
-    app.get('/view/all_episode', episodeCtrl.getAllEpisodes);
+    app.get('/view/all_episode/:id', episodeCtrl.getAllEpisodesForOneAnime);
+
+    app.get('/episodes/get/one/:id', episodeCtrl.getEpisode)
+               /*   delet all episodes  for one anime */
+    app.delete('/delete/all/ep/:id', episodeCtrl.deleteAllEpisodes);
+
+
+
+    // test 
+    app.get('/eps', episodeCtrl.getEps);
+    app.delete('/eps', episodeCtrl.deleteEps);
+
 };

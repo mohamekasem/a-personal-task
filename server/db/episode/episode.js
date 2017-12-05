@@ -2,10 +2,11 @@ const mongoose = require('mongoose'),
       Schema = mongoose.Schema;
 
 let episode = new Schema ({
-    title: {type: String, require: true},
+    ep: String,
     views: {type: Number, default: "0"},
     servers: Array,
-    anime_id: String
+    anime_id: String,
+    anime_name: String
 });
 
 

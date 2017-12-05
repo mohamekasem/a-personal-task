@@ -6,18 +6,20 @@ module.exports = {
         let anime_id = undefined;
         Show.findOne({title: req.body.title}, function(err, anime){
             if(err){
-                console.log('test')
                 res.status(500).send(err);
             }else{
                 anime_id = anime._id;
             }
-        }).then(function(data){
-            console.log(typeof anime_id, 'anime_id');
+        })
+        .then(function(data){
+            console.log(req.body)
             let newEpisode = new Episode({
-                title: req.body.title,
+                ep: req.body.ep,
                 servers: req.body.servers,
-                anime_id: anime_id      
-            }).save(function(err, newEp){
+                anime_id: anime_id,
+                anime_name: req.body.title      
+            })
+            .save(function(err, newEp){
                 if(err){
                     res.status(500).send(err);
                 }else{
@@ -27,12 +29,58 @@ module.exports = {
         })
     },
 
-    getAllEpisodes: function(req, res){
-        Episode.find({}, function(err, allEp){
+    getAllEpisodesForOneAnime: function(req, res){
+        Episode.find({anime_id: req.params.id}, function(err, allEp){
             if(err){
                 res.status(500);
             }else{
                 res.status(200).send(allEp);
+            }
+        })
+    },
+
+    deleteAllEpisodes: function(req, res){
+        Episode.remove({anime_id: req.params.id}, function(err, state){
+            if(err){
+                res.status(202).send(err);
+            }else{
+                res.status(200).send(state);
+            }
+        })
+    },
+
+    getEpisode: function(req, res){
+        Episode.findOne({anime_id: req.params.id}, function(err, episode){
+            if(err){
+                res.status(500).send(err);
+            }else{
+                res.status(200).send(episode);
+            }
+        })
+    },
+
+
+
+
+    /*//////////////////////////////////////////////
+        test functions
+    */
+    getEps: function(req, res){
+        Episode.find({}, function(err, all){
+            if(err){
+                res.status(500).send(err);
+            }else{
+                res.status(200).send(all);
+            }
+        })
+    },
+
+    deleteEps: function(req, res){
+        Episode.remove({}, function(err, state){
+            if(err){
+                res.status(500).send(err);
+            }else{
+                res.status(200).send(state);
             }
         })
     }

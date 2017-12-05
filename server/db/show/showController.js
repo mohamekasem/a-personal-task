@@ -21,7 +21,8 @@ module.exports = {
         type: req.body.type,          
         studios: req.body.studios,
         genres: req.body.genres,
-        trUrl: req.body.trUrl
+        trUrl: req.body.trUrl,
+        story: req.body.story
       }).save(function(err, state){
           if (err){
               res.status(500).send(state);
@@ -52,7 +53,6 @@ module.exports = {
     },
 
     updateEpisodes : function(req, res){
-        // console.log(req.body)
         Episode.findOne({_id: req.body.episode_id}, function(err, episode){
             if(err){
                 res.status(500).send(err);

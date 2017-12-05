@@ -12,4 +12,5 @@ angular.module('ShadowAnime.anime-show', [])
       $scope.$on('handeleAnimeInfo', function(event, args){
        $scope.info = args.data;
       });
+      services.getAllEpisodesForOneAnime($window.localStorage.getItem('id'));
 });

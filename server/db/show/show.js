@@ -11,7 +11,8 @@ let show = new Schema({
     type: String,          
     studios: String,
     genres: String,
-    trUrl: String
+    trUrl: String,
+    story: String
 });
 
 module.exports = mongoose.model('Show', show);

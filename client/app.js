@@ -30,7 +30,8 @@ angular.module('ShadowAnime', [
 	})
 	.when('/episodes/:id/episode', {
 		templateUrl: 'episode/episode.html',
-		controller: 'episodeCtrl'
+		controller: 'episodeCtrl',
+		controllerAs: 'Ep'
 	})
 	.when('/movie', {
 		templateUrl: 'movie/movie.html',
@@ -53,6 +54,7 @@ angular.module('ShadowAnime', [
 	
 	$sceDelegateProvider.resourceUrlWhitelist([
 		'self',
-		'*://www.youtube.com/**'
+		'*://www.youtube.com/**',
+		'*:https://mp4upload.com/**'
 	  ])
 })
