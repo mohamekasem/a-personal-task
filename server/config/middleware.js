@@ -1,5 +1,5 @@
-let morgan = require('morgan');
-let bodyParser = require('body-parser');
+var morgan = require('morgan');
+var bodyParser = require('body-parser');
 var helmet = require('helmet');
 
 module.exports = function(app, express) {
