@@ -8,10 +8,11 @@ angular.module('ShadowAnime.episode', [])
     vm.getAnimeEpisodes = getAnimeEpisodes;
     vm.getEpisode = getEpisode;
     vm.catchNewEps = catchNewEps;
+    vm.info = {};
 
     function catchUrl (url){
         $scope.url = url
-    }
+    };
     
     function getEpisode(){
         anime_id = $window.localStorage.getItem('id');
@@ -19,13 +20,11 @@ angular.module('ShadowAnime.episode', [])
           .then(function(data){
             $scope.episode = data;
             vm.catchUrl($scope.episode.servers[0].url);
-
-
         })
           .catch(function(err){
             console.error(err);
         });
-    }
+    };
 
     function getAnimeEpisodes(){
          anime_id = $window.localStorage.getItem('id');
@@ -34,25 +33,30 @@ angular.module('ShadowAnime.episode', [])
             $scope.trustSrc = function(src) {
                 return $sce.trustAsResourceUrl(src);
             }
-            // if($scope.episode.ep === data[0].ep){
                 $scope.episode = data[0];
-
                 vm.catchUrl($scope.episode.servers[0].url);
                 $scope.episodes = data;  
-            // }
+                services.sharedService.getAnimeInfo(anime_id)
+                    .then(function(animeInfo){
+                        vm.info = animeInfo;
+                    })
+                    .catch(function(err){
+                        console.error(err);
+                    })
         })
           .catch(function(err){
             console.error(err);
         });
-    }
+    };
 
     function catchNewEps (obj){
         $scope.episode = obj;
         vm.catchUrl($scope.episode.servers[0].url);
-    }
+    };
 
     if($scope.url){
         vm.catchUrl();
-    }
+    };
+
 });
 

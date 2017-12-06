@@ -3,7 +3,7 @@ let Episode = require('../episode/episode');
 
 module.exports = {
     getAllShows: function (req, res) {  
-        Show.find({}, function(err, list){
+        Show.find({type: req.params.id}, function(err, list){
             if(err){
                 res.status(500).send(err);
             }else{
@@ -13,8 +13,9 @@ module.exports = {
     },
 
     postNewShow: function (req, res){
+      let tit = req.body.title.toLowerCase();
       let newShow = new Show ({
-        title: req.body.title,
+        title: tit,
         img: req.body.url,
         imgCap:req.body.imgCap,
         aired: req.body.aired,
@@ -85,6 +86,26 @@ module.exports = {
                 res.send(state);
             }
         })
+    },
+
+    getAll: function(req, res){
+        Show.find({}, function(err, list){
+            if(err){
+                res.status(500).send(err);
+            }else{
+                res.status(200).send(list);
+            }
+        });
+    },
+
+    getAllRes: function(req, res){
+        Show.find({title: { "$in": req.params.title }}, function(err, list){
+            if(err){
+                res.status(500).send(err);
+            }else{
+                res.status(200).send(list);
+            }
+        }); 
     }
 
 }

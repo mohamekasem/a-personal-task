@@ -3,8 +3,8 @@
     <div class=" col-sm-12 cart__list_title">
       <h1>All Anime</h1>
       <nav class="navbar">
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <form class="form-inline my-2 my-lg-0" ng-submit="A.search(A.title)">
+          <input class="form-control mr-sm-2" type="text" ng-model="A.title" placeholder="Search">
           <button class="btn btn-custom" type="submit">Search</button>
         </form>
       </nav>

@@ -4,7 +4,7 @@ let episodeCtrl = require('../db/episode/episodeController');
 module.exports = function(app, express) {
                     /*\\\\\\\\\\\get all anime////////////*/
     // note*/ remove an use route and add clear names;
-    app.get('/list_anime', showCtrl.getAllShows);
+    app.get('/list_anime/:id', showCtrl.getAllShows);
                     //********add new anime ***********\\
     app.post('/add/anime_show', showCtrl.postNewShow);
                         //********delete anime ***********\\
@@ -28,10 +28,13 @@ module.exports = function(app, express) {
                /*   delet all episodes  for one anime */
     app.delete('/delete/all/ep/:id', episodeCtrl.deleteAllEpisodes);
 
+    
 
 
     // test 
-    app.get('/eps', episodeCtrl.getEps);
+    app.get('/episodes/all', episodeCtrl.getAll);
+    app.get('/show/search/:title', showCtrl.getAllRes)
+    app.get('/all_anime', showCtrl.getAll)
     app.delete('/eps', episodeCtrl.deleteEps);
 
 };

@@ -1,20 +1,34 @@
 angular.module('ShadowAnime.animeList', [])
 
-.controller('anListCtrl', function($rootScope, $scope, services,$window) {
+.controller('anListCtrl', function($rootScope, $scope, services,$window, $location) {
 	$scope.list = {};
 	var vm = this;
+	vm.search = search;
+	vm.title = "";
 	vm.getAnimeList = getAnimeList;
 	vm.getAnimeInfo = getAnimeInfo;
+	vm.type = "TV";
+	vm.type2 = "Movie";
 	$rootScope.animeInfo = {};
 	
     function getAnimeList () {
-		services.getAnimeList()
+		if($location.path() === "/animelist"){
+			services.getAnimeList(vm.type)
 		 .then(function (data) {
 			$scope.list = data;
 		 })
 		 .catch(function(error) {
 			console.error(error);
 		 });
+		}else {
+		services.getAnimeList(vm.type2)
+		 .then(function (data) {
+			$scope.list = data;
+		 })
+		 .catch(function(error) {
+			console.error(error);
+		 });
+		}
 	};
 
 	function getAnimeInfo (id){
@@ -26,6 +40,23 @@ angular.module('ShadowAnime.animeList', [])
 		 .catch(function(error) {
 			console.error(error);
 		 });
+	   }
+
+	   function search(title){
+			services.getAllRes(title)
+			.then(function(show){
+				if(show.length === 0){
+					$location.path('/not-found-404')
+				}else{
+				$rootScope.animeInfo = show;
+				$scope.list = show;
+				// $location.path(show.title);	
+
+				}
+			})
+			 .catch(function(error) {
+				console.error(error);
+			 });
 	   }
 	
 	   vm.getAnimeList();

@@ -65,7 +65,7 @@ module.exports = {
     /*//////////////////////////////////////////////
         test functions
     */
-    getEps: function(req, res){
+    getAll: function(req, res){
         Episode.find({}, function(err, all){
             if(err){
                 res.status(500).send(err);

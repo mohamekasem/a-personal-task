@@ -1,33 +1,75 @@
-<div class="contaier episodes_container" ng-init="Ep.getAnimeEpisodes()">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="episode_title">
-                <h1>{{episode.anime_name}} &#8680; {{episode.ep}}</h1>
-            </div>
-            <div class="col-md-9 col-xs-12">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="episodes_player-tabs col-md-12">
-                        <ul class="nav nav-tabs col-md-12">
-                            <li ng-repeat="server in episode.servers" class="col-md-2 col-sm-3 col-xs-6 episodes_servers-taps">
-                                <a class="nav-link active" ng-click="Ep.catchUrl(server.url)">{{server.serverName}}</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-12 col-xs-12 col-sm-12">
-                        <div class="anime-player">  
-                            <iframe width="560" height="315" ng-src={{trustSrc(url)}} frameborder="0" allowfullscreen></iframe>
+<div class="container-fluid episodes_container" ng-init="Ep.getAnimeEpisodes()">
+        <div class="row">
+            <div class="col-sm-12 col-md-9">
+                <div class="episode_title">
+                    <h1>{{episode.anime_name}} &#8680; {{episode.ep}}</h1>
+                </div>
+                <div class="col-md-12 col-xs-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="episodes_player-tabs col-md-12">
+                            <ul class="nav col-md-12">
+                                <li ng-repeat="server in episode.servers" class="episodes_servers-taps col-md-2 col-sm-3 col-xs-6">
+                                    <a class="episodes_link" ng-click="Ep.catchUrl(server.url)">{{server.serverName}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-12 col-xs-12 col-sm-12">
+                            <div class="anime-player">
+                                <iframe width="100%" height="485" ng-src={{trustSrc(url)}} frameborder="0" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="dropdown">
-                        <button ng-click="Ep.getAnimeEpisodes()" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Choose Episode 
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" ng-repeat="episode in episodes" ng-click="Ep.catchNewEps(episode)">{{episode.ep}}</a>
-                        </div>
-                      </div>
             </div>
+            <div class="episodes_sidebar col-md-3 col-xs-12" ng-init="Ep.getAnimeEpisodes()">
+                <h2>All Episodes</h2>
+                <ul>
+                    <li ng-repeat="episode in episodes" ng-click="Ep.catchNewEps(episode)">
+                        {{episode.ep}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row">
+          <div class="anime_border">
+           <div class="col-sm-12 col-md-12">
+             <header><h1 class="anime_border-title">{{Ep.info.title}}</h1></header>
+             <div class="">
+                <div class="col-sm-12 col-md-3">
+                <figure>
+                    <img src={{Ep.info.imgCap}} class="rounded float-left" alt={{Ep.info.title}}>
+                </figure>
+                </div>
+                <div class="col-sm-12 col-md-9 anime_border-info">
+                    <table style="width:100%">
+                        <tr>
+                            <th class="keys col-sm-12">Type</th>
+                            <th class="keys col-xs-12">Aired</th> 
+                            <th class="keys col-sm-12">Genres</th> 
+                            <th class="keys col-sm-12">Story</th>                           
+                        </tr>
+                        <tr>
+                            <td class="values col-sm-12">{{Ep.info.type}}</td>
+                            <td class="values col-sm-12">{{Ep.info.aired}}</td>
+                            <td class="values col-sm-12">{{Ep.info.genres}}</td>
+                            <td class="values col-sm-12">{{Ep.info.story}}</td>                                  
+                        </tr>
+                    </table>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="border"></div>
+        <div class="col-sm-12">
+            <header class="anime_border-title">
+                <h1 >Comments</h1>
+            </header>
+            <div>
+            <p style="text-align:center;"><code>coming soon...... :) </code></p>
+        </div>
         </div>
     </div>
 </div>

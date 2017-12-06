@@ -1,10 +1,6 @@
 angular.module('ShadowAnime', [
 	'ShadowAnime.home',
 	'ShadowAnime.animeList',
-	'ShadowAnime.movie',
-	'ShadowAnime.support',
-	'ShadowAnime.privacy',
-	'ShadowAnime.dmca',
 	'ShadowAnime.episode',
 	'ShadowAnime.anime-show',
 	'ShadowAnime.services',
@@ -14,12 +10,8 @@ angular.module('ShadowAnime', [
 .config(function($routeProvider, $httpProvider, $locationProvider, $sceDelegateProvider) {
 	$routeProvider
 		
-	.when("/", {
-		templateUrl: 'home/home.html',
-		controller: 'homeCtrl'
-	  })
 	.when('/animelist', {
-		templateUrl: 'animeList/animeList.html',
+		templateUrl: 'animelist/animeList.html',
 		controller: 'anListCtrl',
 		controllerAs: 'A'
 	})
@@ -34,20 +26,26 @@ angular.module('ShadowAnime', [
 		controllerAs: 'Ep'
 	})
 	.when('/movie', {
-		templateUrl: 'movie/movie.html',
-		controller: 'movieCtrl'
+		templateUrl: 'animelist/animeList.html',
+		controller: 'anListCtrl',
+		controllerAs: 'A'
 	})
 	.when('/support', {
 		templateUrl: 'support/support.html',
-		controller: 'supportCtrl'
 	})
 	.when('/privacy', {
-		templateUrl: 'privacy/privacy.html',
-		controller: 'AppleCtrl'	
+		templateUrl: 'privacy/privacy.html'
 	})
 	.when('/dmca', {
-		templateUrl: 'dmca/dmca.html',
-		controller: 'dmca‬‏Ctrl'	
+		templateUrl: 'dmca/dmca.html'
+	})
+	.when('/', {
+		templateUrl: 'home/home.html',
+		controller: 'homeCtrl',
+		controllerAs: 'Home'
+	})
+	.when('/not-found-404', {
+		templateUrl: '404/404.html',
 	})
 
 	.otherwise({redirectTo: "/"});
