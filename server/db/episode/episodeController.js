@@ -59,6 +59,15 @@ module.exports = {
         })
     },
 
+    getEpisodeById: function(req, res){
+        Episode.findOne({_id: req.params.id}, function(err, episode){
+            if(err){
+                res.status(500).send(err);
+            }else{
+                res.status(200).send(episode);
+            }
+        })
+    },
 
 
 

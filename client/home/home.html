@@ -6,16 +6,16 @@
 	</div>
 	<div class="row" ng-init="Home.getAll()">
 		<div class="col-xs-6 col-md-3" ng-repeat="episode in Home.episodes">
-						<div class="box">
-							<a href="#/episodes/{{episode.anime_name}}/episode">
-								<div class="home_ep-img">
-									<img ng-src="/assets/imgs/logo.png">
-								</div>
-								<h2 class="home_ep-title" ng-click="Home.catchId(episode.anime_id)">
-										{{episode.anime_name}} {{episode.ep}}
-								</h2>
-								</a>
-							</div>
+			<div class="box">
+			<a href="#/episodes/{{episode.anime_name}}/episode">
+				<div class="home_ep-img">
+					<img ng-src="/assets/imgs/logo.png">
+				</div>
+				<h2 class="home_ep-title" ng-click="Home.catchId(episode.anime_id, episode._id)">
+					{{episode.anime_name}} {{episode.ep}}
+				</h2>
+				</a>
+			</div>
 		</div>
 	</div>
 	

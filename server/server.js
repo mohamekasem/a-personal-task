@@ -7,13 +7,9 @@ require('./config/routs.js')(app, express);
 
 
 // db config
-let mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/shadow-test';
-let db = mongoose.connect(mongoURI, { useMongoClient: true });
-db = mongoose.connection
+var mongoURI = 'mongodb://sh200:1234@ds131826.mlab.com:31826/shadow';
 
-db.once('open',function () {
-	console.log('mongoDB is open'); 
-})
+mongoose.connect(mongoURI);
 
 //start the server
 const port = process.env.PORT || 3000;

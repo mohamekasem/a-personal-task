@@ -61,6 +61,8 @@ angular.module('ShadowAnime.animeList', [])
 	
 	   vm.getAnimeList();
 	   $window.localStorage.removeItem('id');
+	   $window.localStorage.removeItem('epId');
+	   
 });
 
 

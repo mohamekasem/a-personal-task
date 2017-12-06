@@ -47,6 +47,9 @@ angular.module('ShadowAnime', [
 	.when('/not-found-404', {
 		templateUrl: '404/404.html',
 	})
+	.when('/ep/id/comming-soon', {
+		templateUrl: 'soon/soon.html',		
+	})
 
 	.otherwise({redirectTo: "/"});
 	

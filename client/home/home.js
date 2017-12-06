@@ -4,7 +4,6 @@ angular.module('ShadowAnime.home', [])
     var vm = this;
     vm.getAll = getAll;
     vm.catchId = catchId;
-    vm.getEpisode = getEpisode;
     vm.episodes = null;
     vm.id = "";
 
@@ -13,13 +12,12 @@ angular.module('ShadowAnime.home', [])
           .then(function(all){
                 vm.episodes = all;
             })
-        }
-    function getEpisode (id){
-
     }
-
-    function catchId(id){
+    
+    function catchId(id, epId){
+        console.log(epId)
         $window.localStorage.setItem('id', id);
+        $window.localStorage.setItem('epId', id);
          vm.id = id;
     }
 });

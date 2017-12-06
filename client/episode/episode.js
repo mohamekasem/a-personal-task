@@ -1,6 +1,6 @@
 angular.module('ShadowAnime.episode', [])
 
-.controller('episodeCtrl', function($scope, services, $window, $sce){
+.controller('episodeCtrl', function($scope, services, $window, $sce, $location){
     $scope.episode = null;
     var vm = this;
     var anime_id = '';
@@ -18,6 +18,10 @@ angular.module('ShadowAnime.episode', [])
         anime_id = $window.localStorage.getItem('id');
         services.getEpisode(anime_id)
           .then(function(data){
+              console.log(data)
+              if(data.lenght <=0){
+                  $location.path('/ep/id/comming-soon')
+              }
             $scope.episode = data;
             vm.catchUrl($scope.episode.servers[0].url);
         })
@@ -30,21 +34,28 @@ angular.module('ShadowAnime.episode', [])
          anime_id = $window.localStorage.getItem('id');
         services.getAllEpisodesForOneAnime(anime_id)
         .then(function(data){
-            $scope.trustSrc = function(src) {
-                return $sce.trustAsResourceUrl(src);
-            }
+            // console.log(data)
+            if(data){
+                $scope.trustSrc = function(src) {
+                  return $sce.trustAsResourceUrl(src);
+                }
                 $scope.episode = data[0];
                 vm.catchUrl($scope.episode.servers[0].url);
                 $scope.episodes = data;  
-                services.sharedService.getAnimeInfo(anime_id)
-                    .then(function(animeInfo){
-                        vm.info = animeInfo;
+                	services.sharedService.getAnimeInfo(anime_id)
+                  	.then(function(animeInfo){
+                      vm.info = animeInfo;
                     })
                     .catch(function(err){
-                        console.error(err);
+                      console.error(err);
                     })
+            }else{
+							$location.path('/ep/id/comming-soon')
+						}  
         })
           .catch(function(err){
+						$location.path('/ep/id/comming-soon')
+						
             console.error(err);
         });
     };

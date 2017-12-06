@@ -42,6 +42,35 @@ angular.module('ShadowAnime.services', [])
  	  }
 	};
 
+	// var sharedService = {
+	// 	getAnimeInfo: function(id){
+	// 		var vm = this;
+	// 		return $http({
+	// 			method: 'GET',
+	// 			url: '/anime/info/' +id,
+	// 		 })
+	// 		 .then(function(res){
+	// 			return res.data;
+	// 		 })
+	// 		 .then(function(data){
+	// 			vm.broadcastItem(data);
+	// 			return this.info = data;
+	// 	 	});	
+	// 	 },
+		 
+	// 	 getEpisodeById: function(id){
+	// 		var vm = this;
+	// 		return $http({
+	// 			method: "GET",
+	// 			url: "/episodes/get/episode/"+ id
+	// 		})
+	// 		.then(function(res){
+	// 			vm.broadcastEpsId(res.data)
+	// 			// return res.data;
+	// 		});
+	// 	},
+
+
 	function getAllEpisodesForOneAnime (id){
 		return $http({
 			method: "GET",
@@ -70,6 +99,16 @@ angular.module('ShadowAnime.services', [])
 		.then(function(res){
 			return res.data;
 		});
+	};
+
+	function getEpisodeById(id){
+		return $http({
+			method: "GET",
+			url: "/episodes/get/episode/"+ id
+		})
+		.then(function(res){
+			return res.data;
+		});
 	}
 
 	return {
@@ -78,6 +117,7 @@ angular.module('ShadowAnime.services', [])
 		getAnimeList: getAnimeList,
 		sharedService: sharedService,
 		getAllEpisodesForOneAnime: getAllEpisodesForOneAnime,
-		getEpisode: getEpisode
+		getEpisode: getEpisode,
+		getEpisodeById: getEpisodeById
 	};
 });

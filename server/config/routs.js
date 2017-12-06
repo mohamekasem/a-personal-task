@@ -28,6 +28,7 @@ module.exports = function(app, express) {
                /*   delet all episodes  for one anime */
     app.delete('/delete/all/ep/:id', episodeCtrl.deleteAllEpisodes);
 
+    app.get('/episodes/get/episode/:id', episodeCtrl.getEpisodeById);
     
 
 
