@@ -106,6 +106,15 @@ module.exports = {
                 res.status(200).send(list);
             }
         }); 
-    }
+    },
 
+    updateAnimeInfo: function(req, res){
+        Show.findOneAndUpdate({_id: req.params.id}, {img: req.body.imgUrl}, function(err, state) {                    
+            if(err){
+                res.status(500).send(err);
+            }else {
+                res.send(state);
+            }
+        })  
+    }
 }

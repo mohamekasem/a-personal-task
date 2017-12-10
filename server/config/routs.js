@@ -38,4 +38,5 @@ module.exports = function(app, express) {
     app.get('/all_anime', showCtrl.getAll)
     app.delete('/eps', episodeCtrl.deleteEps);
 
+    app.put('/update/anime/img/:id', showCtrl.updateAnimeInfo)
 };

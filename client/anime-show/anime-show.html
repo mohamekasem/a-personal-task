@@ -1,45 +1,43 @@
 <div class="container info_container">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="info_img-border">
-                <img ng-src={{info.img}} class="info_img">
-                <h2 class="info_title">{{info.title}}</h2>
-                <div class="episodes_to-Show">
-                    <a href="#/episodes/{{info.title}}/episode" 
-                       class="btn btn-To-Show" role="button">Watch NOW</a>
-                       <h1>Watch All Episodes from here ===></h1>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row info_data-border">
-        <div class="col-sm-12 col-md-7 info_data">
-            <div class="col-sm-12">
-                <span class="info_data-span-key">Aired</span>
-                <span class="info_data-span-value">{{info.aired}}</span>
-            </div>
-            <div class="col-sm-12">
-                <span class="info_data-span-key">Type</span>
-                <span class="info_data-span-value">{{info.type}}</span>
-            </div>
-            <div class="col-sm-12">
-                <span class="info_data-span-key">Studios</span>
-                <span class="info_data-span-value">{{info.studios}}</span>
-            </div>
-            <div class="col-sm-12">
-                <span class="info_data-span-key">genres</span>
-                <span class="info_data-span-value">{{info.genres}}</span>
-            </div>
-            <div class="col-sm-12">
-                <span class="info_data-span-key">Story</span>
-                <span class="info_data-span-value">{{info.story}}</span>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-5 info_iframe">
-          <h1>Trailer For The Anime</h1>
-            <iframe ng-src={{info.trUrl}} frameborder="0" 
-                    allowfullscreen>
-            </iframe>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="info_img-border">
+				<img ng-src= {{info.img}} class="info_img">
+				<h2 class="info_title">{{info.title}}</h2>
+				<div class="episodes_to-Show">
+					<a href="#/episodes/{{info.title}}/episode" class="btn btn-To-Show" role="button">Watch NOW</a>
+					<h1>Watch All Episodes from here ===></h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row info_data-border">
+		<div class="col-sm-12 col-md-7 info_data">
+			<div class="col-sm-12">
+				<span class="info_data-span-key">Aired</span>
+				<span class="info_data-span-value">{{info.aired}}</span>
+			</div>
+			<div class="col-sm-12">
+				<span class="info_data-span-key">Type</span>
+				<span class="info_data-span-value">{{info.type}}</span>
+			</div>
+			<div class="col-sm-12">
+				<span class="info_data-span-key">Studios</span>
+				<span class="info_data-span-value">{{info.studios}}</span>
+			</div>
+			<div class="col-sm-12">
+				<span class="info_data-span-key">genres</span>
+				<span class="info_data-span-value">{{info.genres}}</span>
+			</div>
+			<div class="col-sm-12">
+				<span class="info_data-span-key">Story</span>
+				<span class="info_data-span-value">{{info.story}}</span>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-5 info_iframe">
+			<h1>Trailer For The Anime</h1>
+			<iframe ng-src= {{info.trUrl}} frameborder="0" allowfullscreen>
+			</iframe>
+		</div>
+	</div>
 </div>
