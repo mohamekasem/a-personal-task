@@ -1,4 +1,4 @@
-<div class="container anime-container">
+<div class="container-fluid anime-container">
   <div class="row">
     <div class=" col-sm-12 cart__list_title">
       <h1>All Anime</h1>
@@ -10,18 +10,23 @@
       </nav>
     </div>
   </div>
+</div>
+<div class=" anime-container">
   <div class="row">
     <!-- <div class="col-sm-3 col-xs-6 col-md-12"> -->
-    <div class="card card__list_element" ng-repeat='element in list'>
-      <div class="col-sm-6 col-xs-6 col-md-12">
-        <div ng-click="A.getAnimeInfo(element._id)">
-          <a href="#/animelist/info/{{element.title}}">
-            <img class="card-img-top" ng-src= {{element.imgCap}} alt="Card image cap">
-            <p class="">{{element.title}}</p>
-          </a>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2" ng-repeat='element in list'>            
+      <div class="card_box" ng-click="A.getAnimeInfo(element._id)">
+        <a class="box_link" href="#/animelist/info/{{element.title}}" ng-click="Home.catchId(episode.anime_id)">
+          <!-- <div class="card_img"> -->
+            <img class="home_ep-img" ng-src= {{element.imgCap}}>
+          <!-- </div> -->
+        <div class="home_ep-title">
+          <span>
+            {{element.title}}
+          </span>
         </div>
-      </div>
+      </a>
     </div>
-    <!-- </div>   -->
+    </div>
   </div>
 </div>

@@ -43,6 +43,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin: auto;
+    /* padding: 1%; */
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 ul li {
@@ -111,7 +119,7 @@ nav ul>li a:active {
 }
 
 div.anime-container {
-    background-color: rgba(138, 43, 226, 0.35);
+    background-color: #2d1f7c75;
 }
 
 
@@ -241,21 +249,28 @@ input.form-control:focus {
     border: 4px solid #000000;
 }
 
-.card__list_element {
-    display: block;
-    margin: 0px 2px;
-    background-color: #8A2BE2;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.64);
-    -moz-box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.64);
+.card_box {
+    text-align: center;
+    margin: 5px 0 5px 0;
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 0 0 0 1px rgba(255, 251, 251, 0.15), 0 2px 11px 0 rgba(0, 0, 0, .1);
+    overflow: hidden;
+    flex-wrap: wrap;
+    max-height: 300px;
+    max-width: 250px;
+    position: relative;
 }
 
-.card__list_element .card-img-top {
-    margin-top: 10px;
-    max-width: 220px;
-    height: 300px;
-    padding: 10px;
+.card_box:hover{
+    opacity: 0.89;
+}
+
+.card_img{
+    width: 200px;
+    height: 280px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .cart__list_title {
@@ -280,7 +295,6 @@ input.form-control:focus {
     background-color: rgba(0, 0, 0, 0.64);
     border-radius: 5px;
 }
-
 
 /* anime info style */
 
@@ -409,8 +423,6 @@ input.form-control:focus {
 /* episodes page */
 
 .episodes_container {
-    margin: 10px;
-    padding: 10px;
     background-color: rgba(0, 0, 0, 0.2);
     color: #ffffff;
     display: block;
@@ -450,6 +462,7 @@ li.episodes_servers-taps {
     border-radius: 6px;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
     width: 135px;
+    /* float: right; */
 }
 
 li.episodes_servers-taps:hover {
@@ -505,10 +518,11 @@ div.episodes_sidebar li:hover {
 /* anime info in episodes */
 
 .anime_border {
+    clear: both;
     width: 100%;
     display: block;
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
     border-top: 12px solid #000000;
     background-color: rgba(0, 0, 0, 0.64);
     border-bottom: 5px solid rgba(0, 0, 0, 0.2);
@@ -584,7 +598,7 @@ img.rounded .float-left {
 }
 
 .fa-facebook-square {
-    color: #3b5998;
+    color: #ffffff;
 }
 
 .fa-facebook-square:hover {
@@ -600,7 +614,7 @@ img.rounded .float-left {
 }
 
 .fa-twitter-square {
-    color: #1c94e0;
+    color: #ffffff;
 }
 
 .fa-twitter-square:hover {
@@ -609,6 +623,7 @@ img.rounded .float-left {
 
 .socialWrapper {
     margin: auto;
+    text-align: center;
 }
 
 .footer_info__custom-style {

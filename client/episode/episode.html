@@ -1,11 +1,11 @@
-<div class="container-fluid episodes_container" ng-init="Ep.getAnimeEpisodes()">
+<div class="episodes_container text-center" ng-init="Ep.getAnimeEpisodes()">
         <div class="row">
-            <div class="col-sm-12 col-md-9">
+            <div class="col-sm-12 col-md-8">
                 <div class="episode_title">
                     <h1>{{episode.anime_name}} &#8680; {{episode.ep}}</h1>
                 </div>
                 <div class="col-md-12 col-xs-6">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-sm-12 col-xs-12">
                         <div class="episodes_player-tabs col-md-12">
                             <ul class="nav col-md-12">
                                 <li ng-repeat="server in episode.servers" class="episodes_servers-taps col-md-2 col-sm-3 col-xs-6">
