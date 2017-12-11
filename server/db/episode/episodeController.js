@@ -14,7 +14,6 @@ module.exports = {
 				}
 			})
 			.then(function (data) {
-				console.log(data.imgCap)
 				let newEpisode = new Episode({
 						ep: req.body.ep,
 						servers: req.body.servers,
@@ -57,7 +56,7 @@ module.exports = {
 		});
 	},
 
-	getEpisode: function (req, res) {
+	getEpisodeByAnimeId: function (req, res) {
 		Episode.findOne({
 			anime_id: req.params.id
 		}, function (err, episode) {
@@ -69,23 +68,6 @@ module.exports = {
 		});
 	},
 
-	getEpisodeById: function (req, res) {
-		Episode.findOne({
-			_id: req.params.id
-		}, function (err, episode) {
-			if (err) {
-				res.status(500).send(err);
-			} else {
-				res.status(200).send(episode);
-			}
-		});
-	},
-
-
-
-	/*//////////////////////////////////////////////
-	    test functions
-	*/
 	getAll: function (req, res) {
 		Episode.find({}, function (err, all) {
 			if (err) {

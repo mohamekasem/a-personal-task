@@ -12,7 +12,7 @@
 		function getAll (){
       services.getAll()
         .then(function(all){
-          vm.episodes = all;
+          vm.episodes = all.reverse();
         })
     }
 		
