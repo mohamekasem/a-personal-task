@@ -23,7 +23,8 @@ module.exports = {
         studios: req.body.studios,
         genres: req.body.genres,
         trUrl: req.body.trUrl,
-        story: req.body.story
+        story: req.body.story,
+        state: req.body.state
       }).save(function(err, state){
           if (err){
               res.status(500).send(state);

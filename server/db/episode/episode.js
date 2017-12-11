@@ -6,7 +6,9 @@ let episode = new Schema ({
     views: {type: Number, default: "0"},
     servers: Array,
     anime_id: String,
-    anime_name: String
+    anime_name: String,
+    animeImgCap: String,
+    download_links: Array
 });
 
 

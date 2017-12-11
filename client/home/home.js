@@ -8,7 +8,6 @@
     vm.getAll = getAll;
     vm.catchId = catchId;
     vm.episodes = null;
-    vm.id = "";
 		
 		function getAll (){
       services.getAll()
@@ -17,10 +16,9 @@
         })
     }
 		
-		function catchId(id, epId){
+		function catchId(id){
       $window.localStorage.setItem('id', id);
-      $window.localStorage.setItem('epId', id);
-      vm.id = id;
+      // $window.localStorage.setItem('epId', id);
     }
 	};
 		

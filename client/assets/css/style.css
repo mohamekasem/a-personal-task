@@ -141,10 +141,18 @@ div.anime-container {
     color: #ffffff;
     display: block;
     margin: auto;
-    padding: 15px;
+    /* padding: 15px; */
     position: relative;
     overflow: hidden;
     flex-wrap: wrap;
+
+    text-align: center;
+    /* display: block; */
+    /* overflow: hidden; */
+    /* background-color: rgba(57,241,117,0.38); */
+    width: 1200px;
+    padding: 20px 0px;
+    /* position: relative; */
 }
 
 h1.section1Header {
@@ -159,40 +167,75 @@ h1.section1Header {
 }
 
 .box {
-    width: 100%;
+    /* width: 50%; */
     text-align: center;
-    margin: 24px;
-    padding: 36px 24px 40px 24px;
+    margin: 5px 0 5px 0;
+    padding: 10px;
     border-radius: 7px;
     box-shadow: 0 0 0 1px rgba(255, 251, 251, 0.15),
      0 2px 11px 0 rgba(0,0,0,.1);
-    max-width: 213px;
-    max-height: 334px;
+    /* max-width: 213px; */
+    /* max-height: 300px; */
     overflow: hidden;
+    /* left: 25%; */
     flex-wrap: wrap;
+    display: inline-block; 
+    position: relative;
+}
+
+.box:hover {
+ color: #ffffff;
+ background-color: #000000;
+ box-shadow: 0 0 0 1px rgba(255, 251, 251, 0.877);
+}
+
+a.box_link:hover {
+    color: #ffffff;
+    background-color: #000000;
+    box-shadow: 0 0 0 1px rgba(255, 251, 251, 0.877);
+}
+
+.hide_box{
+    display: none;
+}
+
+.box a:hover .hide_box{
+    display: block;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 50%;
+    position: absolute;
 }
 
 .home_ep-img img{
     display: block;
     margin: auto;
+    width: 200px;
+    height: 280px;
+    max-width: 100%;
+    max-height: 100%;
     position: relative;
-    max-width: 200px;
-    max-height: 280;
+    /* padding-bottom: 10px;  */
 }
 
 .home_ep-title{
-    /* position: absolute; */
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    /* text-align: center; */
+    font-size: 14px;
+    left: 1px;
+
     display: block;
+    background-color: rgba(8, 5, 8, 0.4);
     margin: auto;
-    text-align: center;
-
+    bottom:1px
 }
 
-.home_ep-title:hover
-{
-    color: black;    
-}
-
+/* .home_ep-title:hover{
+    display: none;
+} */
 /* Cart Anime-List */
 .anime-container{
     display: block;

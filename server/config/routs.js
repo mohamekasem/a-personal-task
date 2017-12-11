@@ -29,14 +29,12 @@ module.exports = function(app, express) {
     app.delete('/delete/all/ep/:id', episodeCtrl.deleteAllEpisodes);
 
     app.get('/episodes/get/episode/:id', episodeCtrl.getEpisodeById);
-    
-
+    app.delete('/episodes/delete/one/:id', episodeCtrl.deleteEpById);    
 
     // test 
     app.get('/episodes/all', episodeCtrl.getAll);
     app.get('/show/search/:title', showCtrl.getAllRes)
     app.get('/all_anime', showCtrl.getAll)
     app.delete('/eps', episodeCtrl.deleteEps);
-
     app.put('/update/anime/img/:id', showCtrl.updateAnimeInfo)
 };
