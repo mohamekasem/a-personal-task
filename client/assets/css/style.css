@@ -2,17 +2,19 @@
     width: 10px;
     background-color: rgb(0, 0, 0);
 }
- 
+
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     background-color: rgb(0, 0, 0);
 }
- 
+
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: rgb(53, 15, 100);
-    -webkit-box-shadow: inset 0 0 6px rgba(96, 32, 109,0.5); 
+    -webkit-box-shadow: inset 0 0 6px rgba(96, 32, 109, 0.5);
+    box-shadow: inset 0 0 6px rgba(96, 32, 109, 0.5);
 }
 
 body {
@@ -37,11 +39,12 @@ body {
 }
 
 .row {
-    width:100%;
-    display:flex;
+    width: 100%;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
+
 ul li {
     list-style-type: none;
 }
@@ -58,19 +61,18 @@ a:hover {
 }
 
 nav.nav-menu {
-    background-color:black;
-    box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
-    -moz-box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
+    background-color: black;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.64);
 }
 
 .nav_brand {
     max-width: 100px;
 }
 
-.nav_brand img{
+.nav_brand img {
     background-color: #ffffff;
     border-radius: 10px;
-    /* width:40px; */
     height: auto;
 }
 
@@ -78,11 +80,11 @@ nav.nav-menu {
     color: #ffffff;
 }
 
-.fa-bars{
+.fa-bars {
     color: #8A2BE2
 }
 
-.fa-bars:hover{
+.fa-bars:hover {
     color: rgb(114, 0, 221);
     font-weight: 600;
 }
@@ -91,19 +93,18 @@ nav.nav-menu {
     background-color: #ffffff;
 }
 
-nav ul > li > a{
+nav ul>li>a {
     color: #8A2BE2;
     padding: 5px;
     border-bottom: 1px solid #ffffff;
 }
 
-
-nav ul > li a:hover{
+nav ul>li a:hover {
     color: red;
     border-bottom: 1px solid rgba(138, 43, 226, 0.35);
 }
 
-nav ul > li a:active{
+nav ul>li a:active {
     color: red;
     border-bottom: 1px solid rgba(138, 43, 226, 0.35);
     background-color: rgb(53, 15, 100);
@@ -113,12 +114,16 @@ div.anime-container {
     background-color: rgba(138, 43, 226, 0.35);
 }
 
+
 /* buttons */
-.btn, a, .fa {
+
+.btn,
+a,
+.fa {
     cursor: pointer;
 }
 
-.btn-custom-404{
+.btn-custom-404 {
     background-color: rgb(6, 214, 241);
 }
 
@@ -134,25 +139,20 @@ div.anime-container {
     border-color: #02010a;
 }
 
+
 /* home page */
 
 .home_container {
-    background-color: rgba(0,0,0,0.54);
+    background-color: rgba(0, 0, 0, 0.54);
     color: #ffffff;
     display: block;
     margin: auto;
-    /* padding: 15px; */
     position: relative;
     overflow: hidden;
     flex-wrap: wrap;
-
     text-align: center;
-    /* display: block; */
-    /* overflow: hidden; */
-    /* background-color: rgba(57,241,117,0.38); */
     width: 1200px;
     padding: 20px 0px;
-    /* position: relative; */
 }
 
 h1.section1Header {
@@ -163,30 +163,25 @@ h1.section1Header {
     border-left: 6px solid rgba(134, 121, 121, 0.74);
     border-right: 6px solid rgba(134, 121, 121, 0.74);
     border-radius: 5px;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
 }
 
 .box {
-    /* width: 50%; */
     text-align: center;
     margin: 5px 0 5px 0;
     padding: 10px;
     border-radius: 7px;
-    box-shadow: 0 0 0 1px rgba(255, 251, 251, 0.15),
-     0 2px 11px 0 rgba(0,0,0,.1);
-    /* max-width: 213px; */
-    /* max-height: 300px; */
+    box-shadow: 0 0 0 1px rgba(255, 251, 251, 0.15), 0 2px 11px 0 rgba(0, 0, 0, .1);
     overflow: hidden;
-    /* left: 25%; */
     flex-wrap: wrap;
-    display: inline-block; 
+    display: inline-block;
     position: relative;
 }
 
 .box:hover {
- color: #ffffff;
- background-color: #000000;
- box-shadow: 0 0 0 1px rgba(255, 251, 251, 0.877);
+    color: #ffffff;
+    background-color: #000000;
+    box-shadow: 0 0 0 1px rgba(255, 251, 251, 0.877);
 }
 
 a.box_link:hover {
@@ -195,11 +190,11 @@ a.box_link:hover {
     box-shadow: 0 0 0 1px rgba(255, 251, 251, 0.877);
 }
 
-.hide_box{
+.hide_box {
     display: none;
 }
 
-.box a:hover .hide_box{
+.box a:hover .hide_box {
     display: block;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.4);
@@ -208,7 +203,7 @@ a.box_link:hover {
     position: absolute;
 }
 
-.home_ep-img img{
+.home_ep-img img {
     display: block;
     margin: auto;
     width: 200px;
@@ -216,32 +211,27 @@ a.box_link:hover {
     max-width: 100%;
     max-height: 100%;
     position: relative;
-    /* padding-bottom: 10px;  */
 }
 
-.home_ep-title{
+.home_ep-title {
     position: absolute;
     width: 100%;
     height: 30px;
-    /* text-align: center; */
     font-size: 14px;
     left: 1px;
-
     display: block;
     background-color: rgba(8, 5, 8, 0.4);
     margin: auto;
-    bottom:1px
+    bottom: 1px;
 }
 
-/* .home_ep-title:hover{
-    display: none;
-} */
+
 /* Cart Anime-List */
-.anime-container{
+
+.anime-container {
     display: block;
     margin: auto;
 }
-
 
 input.form-control {
     border: 4px solid rgb(53, 15, 100);
@@ -251,19 +241,18 @@ input.form-control:focus {
     border: 4px solid #000000;
 }
 
-.card__list_element {    
+.card__list_element {
     display: block;
     margin: 0px 2px;
-    background-color:#8A2BE2;
+    background-color: #8A2BE2;
     margin: 10px;
-    border-radius: 10px;    
-    box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
-    -moz-box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
-    
+    border-radius: 10px;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.64);
 }
 
 .card__list_element .card-img-top {
-    margin-top: 10px; 
+    margin-top: 10px;
     max-width: 220px;
     height: 300px;
     padding: 10px;
@@ -275,23 +264,23 @@ input.form-control:focus {
     margin: auto;
     color: #000000;
     text-align: center;
-    background-color: rgba(0,0,0,0.54);
+    background-color: rgba(0, 0, 0, 0.54);
     border-bottom: 10px solid black;
-    box-shadow: 0px 1px 7px rgba(0,0,0,0.54);
-    -moz-box-shadow: 0px 1px 7px rgba(0,0,0,0.54);
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.54);
     margin-bottom: 10px
 }
 
-.cart__list_title h1{
+.cart__list_title h1 {
     color: #ffffff;
     display: block;
     margin: auto;
-    /* margin: 5px; */
     padding: 10px;
     width: 200px;
-    background-color: rgba(0,0,0,0.64);
+    background-color: rgba(0, 0, 0, 0.64);
     border-radius: 5px;
 }
+
 
 /* anime info style */
 
@@ -305,45 +294,40 @@ input.form-control:focus {
     border-left: 4px solid rgb(53, 15, 100);
 }
 
-.info_img-border{
+.info_img-border {
     display: block;
-    margin: auto;        
-    background-color: rgba(9, 6, 20, 0.4); 
-    position: relative; 
+    margin: auto;
+    background-color: rgba(9, 6, 20, 0.4);
+    position: relative;
     margin-left: 20px;
-
-   
 }
 
-.info_img-border > img{
+.info_img-border>img {
     width: 100%;
     height: 400px;
     display: block;
     border-radius: 5px;
 }
 
-.info_title{
-    /* display: block; */
+.info_title {
     top: 150px;
-    /* margin: 4px; */
     padding: 12px;
     position: absolute;
     background-color: rgba(56, 0, 53, 0.4);
-    box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
-    -moz-box-shadow: 0px 1px 7px rgba(0,0,0,0.64);    
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.64);
     border-radius: 10px;
-    width: 200px; 
-    
-}   
+    width: 200px;
+}
 
 .episodes_to-Show {
     display: block;
     margin: auto;
     padding: 10px;
-    background-color: rgba(0,0,0,0.64);
+    background-color: rgba(0, 0, 0, 0.64);
 }
 
-.episodes_to-Show a{
+.episodes_to-Show a {
     float: right;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.4);
@@ -354,7 +338,7 @@ input.form-control:focus {
     text-align: center;
 }
 
-.episodes_to-Show a:hover{
+.episodes_to-Show a:hover {
     background-color: rgba(121, 104, 104, 0.4);
     color: #cf10ff;
     border: 2px solid #000000;
@@ -363,20 +347,19 @@ input.form-control:focus {
 .info_data-border {
     margin: 15px;
     max-width: 100%;
-    border-top: 5px solid rgba(0,0,0,0.64); 
+    border-top: 5px solid rgba(0, 0, 0, 0.64);
     padding: 10px;
 }
 
-.info_data{
+.info_data {
     padding: 15px;
-    /* margin: 10px */
 }
 
-.info_data > div{
+.info_data>div {
     display: block;
     padding: 15px;
-    background-color: rgba(0,0,0,0.64); 
-    border-bottom: 5px solid rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.64);
+    border-bottom: 5px solid rgba(0, 0, 0, 0.2);
     width: 500px;
     overflow: hidden;
     margin: 0;
@@ -385,9 +368,8 @@ input.form-control:focus {
 .info_data-span-key {
     text-align: center;
     background-color: #000000;
-    border: 5px solid rgba(0,0,0,0.54);
+    border: 5px solid rgba(0, 0, 0, 0.54);
     border-right: 10px solid rgba(204, 20, 20, 0.54);
-    /* width: 260px; */
     margin: 5px;
     padding: 10px;
     display: block;
@@ -399,9 +381,8 @@ input.form-control:focus {
     text-align: center;
     display: block;
     padding: 10px;
-    /* width: ; */
-    box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
-    -moz-box-shadow: 0px 1px 7px rgba(0,0,0,0.64);
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.64);
 }
 
 .info_iframe h1 {
@@ -416,7 +397,7 @@ input.form-control:focus {
     width: 300px;
     height: 600px;
     border: 2px solid rgb(136, 104, 177);
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 .info_iframe iframe {
@@ -430,16 +411,15 @@ input.form-control:focus {
 .episodes_container {
     margin: 10px;
     padding: 10px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     color: #ffffff;
     display: block;
-    /* text-align: center; */
 }
 
 .episode_title {
     padding: 10px;
     margin: 0 5px;
-    border-bottom: 5px solid rgba(0,0,0,0.54);
+    border-bottom: 5px solid rgba(0, 0, 0, 0.54);
 }
 
 .episodes_player-tabs {
@@ -456,8 +436,8 @@ input.form-control:focus {
     background: rgb(60, 28, 90);
     overflow: hidden;
     flex-wrap: wrap;
-    border-bottom:12px solid #000000;
-    box-shadow: 0px 1px 16px rgba(0,0,0,0.17);
+    border-bottom: 12px solid #000000;
+    box-shadow: 0px 1px 16px rgba(0, 0, 0, 0.17);
 }
 
 li.episodes_servers-taps {
@@ -466,13 +446,13 @@ li.episodes_servers-taps {
     padding: 3px 10px;
     margin: 3px 2px;
     cursor: pointer;
-    border: 1px solid rgba(35,35,35,0.29);
+    border: 1px solid rgba(35, 35, 35, 0.29);
     border-radius: 6px;
-    box-shadow: 0px 1px 2px rgba(0,0,0,0.08);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
     width: 135px;
 }
 
-li.episodes_servers-taps:hover{
+li.episodes_servers-taps:hover {
     color: #000000;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.637);
     width: 135px;
@@ -482,7 +462,7 @@ li.episodes_servers-taps:hover{
     display: block;
     margin: auto;
     background: rgb(60, 28, 90);
-    box-shadow: 0px 1px 2px rgba(0,0,0,0.08);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
     width: 100%;
 }
 
@@ -498,27 +478,24 @@ div.episodes_sidebar {
     padding-left: 1px !important;
     background-color: #000000;
     border-radius: 10px;
-    /* background-color: #005a92; */
 }
 
-div.episodes_sidebar > h2 {
+div.episodes_sidebar>h2 {
     width: 100%;
     display: block;
     border-bottom: 2px solid #ffffff;
-
 }
 
-div.episodes_sidebar li{
+div.episodes_sidebar li {
     background-color: #000000;
     color: wheat;
     display: block;
     margin: auto;
-    /* top: -200px; */
     position: relative;
     padding: 10px;
 }
 
-div.episodes_sidebar li:hover{
+div.episodes_sidebar li:hover {
     background-color: rgb(255, 255, 255);
     color: #000000;
     border-radius: 5px;
@@ -526,14 +503,15 @@ div.episodes_sidebar li:hover{
 }
 
 /* anime info in episodes */
+
 .anime_border {
     width: 100%;
     display: block;
     margin: auto;
     padding: 10px;
     border-top: 12px solid #000000;
-    background-color: rgba(0,0,0,0.64);
-    border-bottom: 5px solid rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.64);
+    border-bottom: 5px solid rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
 
@@ -546,11 +524,11 @@ div.episodes_sidebar li:hover{
     padding: 10px;
 }
 
-img.rounded .float-left{
+img.rounded .float-left {
     max-width: 100%;
 }
 
-.anime_border-info div{
+.anime_border-info div {
     display: inline-block;
 }
 
@@ -558,11 +536,9 @@ img.rounded .float-left{
     padding: 10px;
     display: block;
     margin: auto;
-    float: right; 
+    float: right;
     cursor: pointer;
-    
 }
-
 
 .anime_border-info .keys {
     font-weight: 300;
@@ -572,23 +548,21 @@ img.rounded .float-left{
     border-bottom: 2px solid rgb(17, 2, 37);
     border-right: 2px solid #8A2BE2;
     padding: 12px;
-    /* margin-bottom: 5px;   */
-
 }
 
 .anime_border-info .values {
     text-align: center;
     width: 10%;
     background-color: #000000;
-    border-bottom: 2px solid rgb(53, 15, 100); 
+    border-bottom: 2px solid rgb(53, 15, 100);
     padding: 0;
-    border-right: 2px solid #8A2BE2;  
+    border-right: 2px solid #8A2BE2;
     font-weight: 2rem;
     line-height: 1.5;
 }
 
 #border {
-    margin-top: 10px; 
+    margin-top: 10px;
     padding: 20px;
     display: block;
     background-color: #000000;
@@ -598,61 +572,65 @@ img.rounded .float-left{
     border: 2px solid rgba(0, 0, 0, 0.4);
 }
 
+
 /* footer */
+
 .footerImg {
     padding: 15px;
-  }
-  
-  .fa {
+}
+
+.fa {
     margin: 10px;
-  }
-  
-  .fa-facebook-square {
+}
+
+.fa-facebook-square {
     color: #3b5998;
-  }
-  
-  .fa-facebook-square:hover {
+}
+
+.fa-facebook-square:hover {
     color: #053697;
-  }
+}
 
-  .fa-instagram {
+.fa-instagram {
     color: #ffffff;
-  }
+}
 
-  .fa-instagram:hover {
+.fa-instagram:hover {
     color: #7a0b0b;
-  }
+}
 
-  .fa-twitter-square {
-      color: #1c94e0;
-  }
+.fa-twitter-square {
+    color: #1c94e0;
+}
 
-  .fa-twitter-square:hover {
+.fa-twitter-square:hover {
     color: #005a92;
 }
-  
-  .socialWrapper {
+
+.socialWrapper {
     margin: auto;
-  }
+}
 
-  .footer_info__custom-style {
-      /* display: block; */
-      margin-top: 15px;
-      padding: 15px;
-      color: #ffffff;
-      text-align: center;
-  }
+.footer_info__custom-style {
+    /* display: block; */
+    margin-top: 15px;
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+}
 
-  /* for support */
+
+/* for support */
+
 .b8 {
     width: 100%;
     height: 450px;
     display: block;
 }
 
-.b8 > h2 {
+.b8>h2 {
     margin-top: 20px;
-    color:#80479e;
+    color: #80479e;
     display: block;
     margin-bottom: 20px;
 }
