@@ -1,7 +1,7 @@
 # a-personal-task
 Challenge friends: personal project In one week
 
-#Shadow-Anime
+# Shadow-Anime
 watch anime online for free. Here you can watch any anime you want, if it isn't available in the site, just send us a request, we will upload it for you as soon as possible.
 
 ## Team
